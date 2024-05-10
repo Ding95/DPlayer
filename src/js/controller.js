@@ -25,6 +25,12 @@ class Controller {
         this.initFullButton();
         this.initQualityButton();
         this.initScreenshotButton();
+
+        // 画中画
+        this.player.template.pipButton.addEventListener('click', () => {
+            this.player.video.requestPictureInPicture();
+        });
+
         // if subtitle url not array, not init old single subtitle button
         if (this.player.options.subtitle) {
             if (typeof this.player.options.subtitle.url === 'string') {
